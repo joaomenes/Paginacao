@@ -8,9 +8,7 @@ class PaginationHelper:
     
     # retorna o número de itens de toda a coleção
     def item_count(self):
-        total = self.collection_size
-        return f'O número total da lista é {total}.'
-    
+        return f'O número total da lista é {self.collection_size}.'
     
     # retorna o número de páginas
     def page_count(self, return_only_count=False):
@@ -38,10 +36,10 @@ class PaginationHelper:
         
     
     # determina em qual página um item de um determinado índice está. Índices baseados em zero.
-    # este método deve retornar -1 para valores item_index que estão fora do intervalo
+    # este método deve retornar uma mensagem para valores item_index que estão fora do intervalo
     def page_index(self, item_index):
         if item_index < 0 or item_index >= self.collection_size:
-            return -1
+            return 'O item não se encontra na página.'
         return f'O item se encontra na página {item_index // self.items_per_page}.'
 
 helper = PaginationHelper(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'], 4)
