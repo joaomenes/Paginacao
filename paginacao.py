@@ -1,7 +1,6 @@
 class PaginationHelper:
     
-    # O construtor recebe um array de itens e um inteiro indicando
-    # quantos itens cabem em uma única página
+    # O construtor recebe um array de itens e um inteiro, indicando quantos itens cabem em uma única página
     def __init__(self, collection, items_per_page):
         self.collection = collection
         self.items_per_page = items_per_page
@@ -44,8 +43,6 @@ class PaginationHelper:
         if item_index < 0 or item_index >= self.collection_size:
             return -1
         return f'O item se encontra na página {item_index // self.items_per_page}.'
-
-
 
 helper = PaginationHelper(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'], 4)
 print(helper.item_count())
